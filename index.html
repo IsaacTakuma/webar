@@ -28,6 +28,9 @@
     </script>
     <body style="margin: 0px; overflow: hidden">
         <a-scene embedded arjs>
+            <a-assets>
+                <video id="video" src="demo.mp4" autoplay muted playsinline></video>
+            </a-assets>
             <a-marker type="pattern" url="patt.patt">
                 <!-- <a-box position="0 -1 0" scale="1 1 1" color="grey"></a-box> -->
                 <!-- <img position="0 -1 0" id="img_play" src="./kimu.jpg"></img> -->
@@ -38,7 +41,7 @@
 										position="0 0 0"
 										rotation="-90 0 0"
 								></a-image> -->
-                <a-video
+                <!-- <a-video
                     id="video"
                     src="demo.mp4"
                     width="1.6"
@@ -49,7 +52,9 @@
                     playsinline
                     muted
                     autoplay
-                ></a-video>
+                ></a-video> -->
+
+                <a-plane material="src: #video" width="1.6" height="0.9" position="0 0 0" rotation="-90 0 0"></a-plane>
             </a-marker>
             <a-entity camera></a-entity>
         </a-scene>
