@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8" />
+        <title>AR.js - Augmented Reality for the Web - 3D/2D Marker</title>
+        <meta name="description" content="AR.js - Augmented Reality for the Web - 3D/2D Marker" />
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
     </head>
     <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
@@ -28,9 +32,9 @@
     </script>
     <body style="margin: 0px; overflow: hidden">
         <a-scene embedded arjs>
-            <a-assets>
-                <video id="video" src="demo.mp4" autoplay muted playsinline></video>
-            </a-assets>
+            <!-- <a-assets>
+                <video id="video" src="sample-5s.mp4" autoplay muted playsinline></video>
+            </a-assets> -->
             <a-marker type="pattern" url="patt.patt">
                 <!-- <a-box position="0 -1 0" scale="1 1 1" color="grey"></a-box> -->
                 <!-- <img position="0 -1 0" id="img_play" src="./kimu.jpg"></img> -->
@@ -41,20 +45,20 @@
 										position="0 0 0"
 										rotation="-90 0 0"
 								></a-image> -->
-                <!-- <a-video
+                <a-video
                     id="video"
                     src="demo.mp4"
                     width="1.6"
                     height="0.9"
                     position="0 0 0"
                     rotation="-90 0 0"
+                    loop="true"
                     play-video
                     playsinline
                     muted
-                    autoplay
-                ></a-video> -->
+                ></a-video>
 
-                <a-plane material="src: #video" width="1.6" height="0.9" position="0 0 0" rotation="-90 0 0"></a-plane>
+                <!-- <a-plane material="src: #video" width="1.6" height="0.9" position="0 0 0" rotation="-90 0 0"></a-plane> -->
             </a-marker>
             <a-entity camera></a-entity>
         </a-scene>
