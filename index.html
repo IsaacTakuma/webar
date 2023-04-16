@@ -2,161 +2,49 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>AR.js - Augmented Reality for the Web - 3D/2D Marker</title>
-        <meta name="description" content="AR.js - Augmented Reality for the Web - 3D/2D Marker" />
+        <title>Kimura Kento - AR</title>
+        <meta name="description" content="Kimura Kento - AR" />
         <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
+        <link rel="stylesheet" href="/assets/reset.css" />
+        <link rel="stylesheet" href="/assets/style.css" />
         <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
         <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-        <script
-            src="https://code.jquery.com/jquery-3.3.1.min.js"
-            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-            crossorigin="anonymous"
-        ></script>
-        <script>
-            // AFRAME.registerComponent("play-video", {
-            //     init: function () {
-            //         const video = this.el;
-            //         video.pause();
-            //         this.el.sceneEl.addEventListener("markerFound", function () {
-            //             video.play();
-            //             document.querySelector("a-marker").addEventListener("touchstart", function () {
-            //                 document.querySelector("#video").play();
-            //             });
-            //         });
-            //         this.el.sceneEl.addEventListener("markerLost", function () {
-            //             video.pause();
-            //         });
-            //     },
-            // });
-            // document.addEventListener("DOMContentLoaded", function () {
-            //     const video = document.getElementById("video");
-            //     const videoEl = video.components.material.material.map.image;
-
-            //     document.getElementById("playButton").addEventListener("touchstart", function () {
-            //         videoEl.play();
-            //     });
-
-            //     document.getElementById("stopButton").addEventListener("touchstart", function () {
-            //         videoEl.pause();
-            //         videoEl.currentTime = 0;
-            //     });
-            // });
-
-            // let m = document.querySelector("a-marker");
-            // m.addEventListener("markerFound", (e) => {
-            //     let video = document.querySelector("#video").play();
-            // });
-            // m.addEventListener("markerLost", (e) => {
-            //     let video = document.querySelector("#video").pause();
-            // });
-
-            var vid;
-
-            $(function () {
-                vid = $("#waterVideo").get(0);
-
-                $("#start").click(function () {
-                    $("#pre_start").hide();
-
-                    vid.play();
-                    // vid.pause();
-                    vid.currentTime = 0;
-                });
-            });
-
-            AFRAME.registerComponent("registerevents", {
-                init: function () {
-                    var marker = this.el;
-
-                    marker.addEventListener("markerLost", function () {
-                        vid.pause();
-                        vid.currentTime = 0;
-                    });
-
-                    marker.addEventListener("markerFound", function () {
-                        vid.currentTime = 0;
-                        vid.play();
-                    });
-                },
-            });
-        </script>
-        <style>
-            video {
-                object-fit: cover;
-            }
-            .center-v button {
-                font-size: 3em;
-            }
-            .center-v {
-                height: 500px;
-                display: flex;
-                align-items: center;
-            }
-            .arjs-loader {
-                height: 100%;
-                width: 100%;
-                position: absolute;
-                top: 0;
-                left: 0;
-                background-color: rgba(0, 0, 0, 0.8);
-                z-index: 9999;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-            .wrap {
-                width: 100%;
-                height: 100%;
-                position: fixed;
-                z-index: 99;
-                top: 0%;
-                left: 0%;
-                display: flex;
-                gap: 20px;
-            }
-            .button {
-                /* transform: translate(-50%, -50%); */
-                width: 100px;
-                height: 100px;
-                border-radius: 50%;
-                background-color: #fff;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                font-size: 30px;
-                color: #000;
-                cursor: pointer;
-            }
-        </style>
+        <script src="/assets/script.js"></script>
     </head>
     <body style="margin: 0px; overflow: hidden">
-        <!-- <div class="wrap">
-            <div id="playButton" class="button play">play</div>
-            <div id="stopButton" class="button play">stop</div>
-        </div> -->
         <div class="arjs-loader" id="pre_start">
-            <div class="center-v">
-                <button id="start">Start</button>
+            <div class="center-v" id="start">
+                <button class="start">
+                    <span class="text">TAP TO START</span>
+                </button>
+            </div>
+        </div>
+        <div class="icons">
+            <div class="icons-inner">
+                <div class="icon" id="video-a">
+                    <span class="">A</span>
+                </div>
+                <div class="icon" id="video-b">
+                    <span class="">B</span>
+                </div>
+                <div class="icon">
+                    <span class="">C</span>
+                </div>
+                <div class="icon">
+                    <span class="">D</span>
+                </div>
             </div>
         </div>
         <a-scene embedded arjs>
             <a-assets>
-                <video id="waterVideo" crossorigin="anonymous" src="demo.mp4" loop></video>
+                <video id="myVideo" crossorigin="anonymous" src="/assets/videos/video_1.mp4" loop></video>
             </a-assets>
 
             <a-marker type="pattern" url="patt.patt" registerevents>
-                <a-video id="water" src="#waterVideo" width="1.6" height="0.9" position="0 0 0" rotation="-90 0 0" play="true"></a-video>
-                <!-- <a-text value="Test" color="red" position="-0.5 0 0.8" rotation="270 0 0" side="double"></a-text> -->
+                <a-video id="water" src="#myVideo" width="1.6" height="0.9" position="0 0 0" rotation="-90 0 0" play="true"></a-video>
             </a-marker>
             <a-entity camera></a-entity>
-
-            <!-- <a-marker type="pattern" url="patt.patt">
-                <video id="video" playsinline webkitplaysinline autoplay controls muted loop src="demo.mp4"></video>
-                <a-video src="#video" width="1.6" height="0.9" position="0 0 0" rotation="-90 0 0"></a-video>
-            </a-marker>
-            <a-entity camera></a-entity> -->
         </a-scene>
     </body>
 </html>

@@ -1,0 +1,86 @@
+video {
+    object-fit: cover;
+}
+
+.arjs-loader {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    border: 32px solid rgba(64, 68, 77, 1);
+    display: none;
+}
+
+.center-v {
+    height: 100%;
+    width: 100%;
+    background: hsla(98, 30%, 30%, 0.8);
+    mix-blend-mode: multiply;
+    display: flex;
+    align-items: center;
+    padding: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.start {
+    vertical-align: middle;
+    background: none;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.text {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    animation: blink-animation 1200ms steps(2) infinite alternate;
+}
+
+@keyframes blink-animation {
+    to {
+        opacity: 0;
+    }
+}
+
+.a-enter-vr {
+    display: none;
+}
+
+.icons {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    padding: 16px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.icons .icons-inner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px; /* 各要素間のスペース */
+    justify-content: center;
+    align-items: center;
+}
+
+.icon {
+    cursor: pointer;
+    border-radius: 50%;
+    background: #fff;
+    display: block;
+    aspect-ratio: 1/1;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
