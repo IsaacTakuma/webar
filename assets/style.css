@@ -10,7 +10,6 @@ video {
     left: 0;
     z-index: 99;
     border: 32px solid rgba(64, 68, 77, 1);
-    display: none;
 }
 
 .center-v {
@@ -40,7 +39,7 @@ video {
     text-align: center;
     font-size: 24px;
     font-weight: bold;
-    animation: blink-animation 1200ms steps(2) infinite alternate;
+    /* animation: blink-animation 1200ms steps(2) infinite alternate; */
 }
 
 @keyframes blink-animation {
@@ -54,6 +53,7 @@ video {
 }
 
 .icons {
+    display: none;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -66,7 +66,7 @@ video {
 .icons .icons-inner {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px; /* 各要素間のスペース */
+    gap: 20px;
     justify-content: center;
     align-items: center;
 }

@@ -5,9 +5,9 @@ document.addEventListener("DOMContentLoaded", function () {
 	vid = document.getElementById("myVideo");
 	document.getElementById("start").addEventListener("click", function () {
 		document.getElementById("pre_start").style.display = "none";
+		document.getElementById("tap").style.display = "inline-block";
 
 		vid.play();
-		// vid.pause();
 		vid.currentTime = 0;
 	});
 });
