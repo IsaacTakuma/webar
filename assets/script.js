@@ -30,10 +30,10 @@ AFRAME.registerComponent("registerevents", {
 
 window.addEventListener('DOMContentLoaded', () => {
 
-	const icons = document.querySelectorAll('.icon');
-	console.log(icons);
+	const menu = document.querySelectorAll('.icon');
+	console.log(menu);
 
-	icons.forEach((icon, index) => {
+	menu.forEach((icon, index) => {
 		console.log(`/assets/videos/video_${index + 1}.mp4`);
 		icon.addEventListener('click', () => {
 			vid.pause();
