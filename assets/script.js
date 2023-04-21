@@ -37,14 +37,14 @@ window.addEventListener('DOMContentLoaded', () => {
 
 	safe.addEventListener('click', () => {
 		nsfw = 'safe';
-		document.getElementById("tap").classList.toggle("maniax");
-		document.getElementById("tap").classList.toggle("safe");
+		document.getElementById("tap").classList.remove("maniax");
+		document.getElementById("tap").classList.add("safe");
 	});
 
 	maniax.addEventListener('click', () => {
 		nsfw = 'maniax';
-		document.getElementById("tap").classList.toggle("maniax");
-		document.getElementById("tap").classList.toggle("safe");
+		document.getElementById("tap").classList.add("maniax");
+		document.getElementById("tap").classList.remove("safe");
 	});
 
 	menu.forEach((icon, index) => {
