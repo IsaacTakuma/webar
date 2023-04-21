@@ -20,15 +20,15 @@
                 </button>
             </div>
         </div>
-        <div class="menu" id="tap">
+        <div class="menu safe" id="tap">
             <div class="container">
                 <div class="nsfw-inner">
-                    <div class="nsfw safe">
+                    <button class="nsfw safe" id="safe">
                         <span class="">全年齢向け</span>
-                    </div>
-                    <div class="nsfw maniax">
+                    </button>
+                    <button class="nsfw maniax" id="maniax">
                         <span class="">成人向け( R18 )</span>
-                    </div>
+                    </button>
                 </div>
                 <div class="icons-inner">
                     <div class="icon" id="video-a">
@@ -48,11 +48,11 @@
         </div>
         <a-scene embedded arjs>
             <a-assets>
-                <video id="myVideo" crossorigin="anonymous" src="/assets/videos/video_1.mp4" loop muted></video>
+                <video id="myVideo" crossorigin="anonymous" src="/assets/videos/safe/video_1.mp4" loop muted></video>
             </a-assets>
 
             <a-marker type="pattern" url="patt.patt" registerevents>
-                <a-video id="water" src="#myVideo" width="2.4" height="1.35" position="0 0 0" rotation="-90 0 0" play="true"></a-video>
+                <a-video id="video" src="#myVideo" width="2.4" height="1.35" position="0 0 0" rotation="-90 0 0" play="true"></a-video>
             </a-marker>
             <a-entity camera></a-entity>
         </a-scene>

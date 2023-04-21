@@ -31,15 +31,29 @@ AFRAME.registerComponent("registerevents", {
 window.addEventListener('DOMContentLoaded', () => {
 
 	const menu = document.querySelectorAll('.icon');
-	console.log(menu);
+	let nsfw = 'safe';
+	const safe = document.getElementById('safe');
+	const maniax = document.getElementById('maniax');
+
+	safe.addEventListener('click', () => {
+		nsfw = 'safe';
+		document.getElementById("tap").classList.toggle("maniax");
+		document.getElementById("tap").classList.toggle("safe");
+	});
+
+	maniax.addEventListener('click', () => {
+		nsfw = 'maniax';
+		document.getElementById("tap").classList.toggle("maniax");
+		document.getElementById("tap").classList.toggle("safe");
+	});
 
 	menu.forEach((icon, index) => {
-		console.log(`/assets/videos/video_${index + 1}.mp4`);
 		icon.addEventListener('click', () => {
 			vid.pause();
-			vid.src = `/assets/videos/video_${index + 1}.mp4`;
+			vid.src = `/assets/videos/${nsfw}/video_${index + 1}.mp4`;
 			vid.play();
 			vid.currentTime = 0;
+			console.log(vid.src);
 		});
 	});
 });

@@ -74,8 +74,16 @@ video {
     left: 0;
     width: 100%;
     z-index: 999;
-    background: hsla(98, 30%, 30%, 0.4);
     backdrop-filter: blur(4px);
+}
+
+.manu,
+.safe {
+    background: hsla(98, 30%, 30%, 0.4);
+}
+.manu,
+.maniax {
+    background: hsla(344, 73%, 70%, 0.4);
 }
 
 .menu::after {
@@ -146,13 +154,21 @@ video {
     margin-inline: auto;
     cursor: pointer;
     border-radius: 50%;
-    background: #fff;
+    background: #951b54;
     display: block;
     aspect-ratio: 1/1;
-    font-size: 16px;
-    font-weight: bold;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.icon span {
+    font-family: "Arial", "メイリオ";
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#video {
+    border: 10px solid #fff;
 }
