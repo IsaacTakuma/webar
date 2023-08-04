@@ -1,60 +1,66 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <title>Kimura Kento - AR</title>
-        <meta name="description" content="Kimura Kento - AR" />
-        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <link rel="stylesheet" href="/assets/reset.css" />
-        <link rel="stylesheet" href="/assets/style.css" />
-        <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-        <script src="/assets/script.js"></script>
-    </head>
-    <body style="margin: 0px; overflow: hidden">
-        <div class="arjs-loader" id="pre_start">
-            <div class="center-v" id="start">
-                <button class="start">
-                    <img class="text" src="/assets/start.svg" alt="TAP TO START" />
-                </button>
-            </div>
+  <head>
+    <meta charset="utf-8" />
+    <title>Kimura Kento - AR</title>
+    <meta name="description" content="Kimura Kento - AR" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="stylesheet" href="/assets/reset.css" />
+    <link rel="stylesheet" href="/assets/style.css" />
+    <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="/assets/script.js"></script>
+  </head>
+  <body style="margin: 0px; overflow: hidden">
+    <div class="arjs-loader" id="pre_start">
+      <div class="center-v" id="start">
+        <div class="">
+          <div class="guide">
+            <img class="guide-image" src="/assets/pattern.png" alt="" />
+            <p class="guide-text">名刺の表にあるマーカーを<br />カメラに合わせてください</p>
+          </div>
+          <button class="start">
+            <img class="text" src="/assets/start.svg" alt="TAP TO START" />
+          </button>
         </div>
-        <div class="menu safe" id="tap">
-            <div class="container">
-                <div class="nsfw-inner">
-                    <button class="nsfw safe" id="safe">
-                        <span class="">全年齢向け</span>
-                    </button>
-                    <button class="nsfw maniax" id="maniax">
-                        <span class="">成人向け( R18 )</span>
-                    </button>
-                </div>
-                <div class="icons-inner">
-                    <div class="icon" id="video-a">
-                        <span class="">A</span>
-                    </div>
-                    <div class="icon" id="video-b">
-                        <span class="">B</span>
-                    </div>
-                    <div class="icon">
-                        <span class="">C</span>
-                    </div>
-                    <div class="icon">
-                        <span class="">D</span>
-                    </div>
-                </div>
-            </div>
+      </div>
+    </div>
+    <div class="menu safe" id="tap">
+      <div class="container">
+        <div class="nsfw-inner">
+          <button class="nsfw safe" id="safe">
+            <span class="">全年齢向け</span>
+          </button>
+          <button class="nsfw maniax" id="maniax">
+            <span class="">成人向け( R18 )</span>
+          </button>
         </div>
-        <a-scene embedded arjs>
-            <a-assets>
-                <video id="myVideo" crossorigin="anonymous" src="/assets/videos/safe/video_1.mp4" loop muted></video>
-            </a-assets>
+        <div class="icons-inner">
+          <div class="icon" id="video-a">
+            <span class="">A</span>
+          </div>
+          <div class="icon" id="video-b">
+            <span class="">B</span>
+          </div>
+          <div class="icon">
+            <span class="">C</span>
+          </div>
+          <div class="icon">
+            <span class="">D</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a-scene embedded arjs>
+      <a-assets>
+        <video id="myVideo" crossorigin="anonymous" src="/assets/videos/safe/video_1.mp4" loop muted></video>
+      </a-assets>
 
-            <a-marker type="pattern" url="patt.patt" registerevents>
-                <a-video id="video" src="#myVideo" width="2.4" height="1.35" position="0 0 0" rotation="-90 0 0" play="true"></a-video>
-            </a-marker>
-            <a-entity camera></a-entity>
-        </a-scene>
-    </body>
+      <a-marker type="pattern" url="patt.patt" registerevents>
+        <a-video id="video" src="#myVideo" width="2.4" height="1.35" position="0 0 0" rotation="-90 0 0" play="true"></a-video>
+      </a-marker>
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
 </html>

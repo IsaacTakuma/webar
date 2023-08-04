@@ -41,6 +41,21 @@ video {
     pointer-events: none;
 }
 
+.guide {
+    position: relative;
+    z-index: 10;
+}
+.guide-image {
+    opacity: 0.6;
+    max-width: 240px;
+}
+.guide-text {
+    text-align: center;
+    color: #fff;
+    margin-top: 8px;
+    opacity: 0.6;
+}
+
 .start {
     vertical-align: middle;
     background: none;
@@ -49,12 +64,16 @@ video {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    margin-inline: auto;
+    width: 100%;
+    margin-top: 64px;
 }
 
 .text {
     display: block;
     width: 180px;
     animation: blink-animation 800ms steps(2) infinite alternate;
+    margin-inline: auto;
 }
 
 @keyframes blink-animation {
